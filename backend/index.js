@@ -12,9 +12,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-app.get("/", (req, res) => {
-  res.send("welcome");
-});
+app.use("/api/users", UserRoutes);
 app.listen(PORT, () => {
   console.log(`http://localhost:${PORT}`);
 });
